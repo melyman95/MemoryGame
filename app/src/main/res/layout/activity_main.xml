@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".MainActivity">
+    tools:context=".HomeScreenActivity">
 
     <TextView
         android:id="@+id/testYourMemoryBanner"
@@ -29,13 +29,14 @@
         android:layout_height="116dp"
         android:text="Begin?"
         android:textSize="30sp"
+        android:onClick="startGame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/highScoresButton"
         android:layout_width="185dp"
         android:layout_height="116dp"
         android:layout_marginBottom="106dp"
