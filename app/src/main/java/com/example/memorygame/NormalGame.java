@@ -10,15 +10,18 @@ import android.widget.TextView;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GameActivityEasy extends AppCompatActivity {
+public class NormalGame extends AppCompatActivity {
+
+    Button[][] gameButtons = new Button[3][4];
+
+    public NormalGame() {
+        final int TIME_LIMIT = 100;
+        final int AMOUNT_OF_SQUARES = 12;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
-
-        Timer gameTimer = new Timer();
+        setContentView(R.layout.activity_normal_game);
     }
-
-
 }
