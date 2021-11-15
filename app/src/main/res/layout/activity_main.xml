@@ -25,11 +25,11 @@
 
     <Button
         android:id="@+id/newGameButton"
-        android:layout_width="185dp"
-        android:layout_height="116dp"
+        android:layout_width="164dp"
+        android:layout_height="71dp"
+        android:onClick="startGame"
         android:text="Begin?"
         android:textSize="30sp"
-        android:onClick="startGame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,14 +37,15 @@
 
     <Button
         android:id="@+id/highScoresButton"
-        android:layout_width="185dp"
-        android:layout_height="116dp"
-        android:layout_marginBottom="106dp"
+        android:layout_width="211dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
         android:text="High Scores"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
     <ImageView
         android:id="@+id/brain"
@@ -55,4 +56,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="179dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="433dp"
+        android:layout_marginBottom="42dp"
+        app:layout_constraintBottom_toTopOf="@+id/highScoresButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/easy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Easy"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/Hard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hard"
+            android:textSize="24sp" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
