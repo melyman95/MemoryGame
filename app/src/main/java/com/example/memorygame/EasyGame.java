@@ -12,15 +12,42 @@ import java.util.TimerTask;
 
 public class EasyGame extends AppCompatActivity {
 
-    public static int AMOUNT_OF_SQUARES = 0;
-    public static int TIME_LIMIT = 0;
-
     Button[][] gameButtons = new Button[3][3];
 
+    private int AMOUNT_OF_SQUARES = 9;
+    private int TIME_LIMIT = 180;
 
     public EasyGame() {
-        TIME_LIMIT = 200;
-        AMOUNT_OF_SQUARES = 9;
+
+    }
+
+    public EasyGame(int AMOUNT_OF_SQUARES, int TIME_LIMIT) {
+        this.AMOUNT_OF_SQUARES = AMOUNT_OF_SQUARES;
+        this.TIME_LIMIT = TIME_LIMIT;
+    }
+
+    public Button[][] getGameButtons() {
+        return gameButtons;
+    }
+
+    public void setGameButtons(Button[][] gameButtons) {
+        this.gameButtons = gameButtons;
+    }
+
+    public int getAMOUNT_OF_SQUARES() {
+        return AMOUNT_OF_SQUARES;
+    }
+
+    public void setAMOUNT_OF_SQUARES(int AMOUNT_OF_SQUARES) {
+        this.AMOUNT_OF_SQUARES = AMOUNT_OF_SQUARES;
+    }
+
+    public int getTIME_LIMIT() {
+        return TIME_LIMIT;
+    }
+
+    public void setTIME_LIMIT(int TIME_LIMIT) {
+        this.TIME_LIMIT = TIME_LIMIT;
     }
 
     @Override
