@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/mainBackgroundColor"
     tools:context=".HomeScreenActivity">
 
     <TextView
@@ -25,13 +25,15 @@
 
     <Button
         android:id="@+id/newGameButton"
-        android:layout_width="164dp"
-        android:layout_height="71dp"
+        android:layout_width="222dp"
+        android:layout_height="66dp"
+        android:background="#32A89E"
         android:onClick="startGame"
         android:text="Begin?"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,10 +42,12 @@
         android:layout_width="211dp"
         android:layout_height="0dp"
         android:layout_marginBottom="4dp"
+        android:background="@color/buttonColor"
         android:text="High Scores"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
@@ -84,7 +88,7 @@
             android:textSize="24sp" />
 
         <RadioButton
-            android:id="@+id/Hard"
+            android:id="@+id/hard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hard"
