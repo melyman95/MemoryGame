@@ -14,9 +14,40 @@ public class NormalGame extends AppCompatActivity {
 
     Button[][] gameButtons = new Button[3][4];
 
+    private int AMOUNT_OF_SQUARES = 12;
+    private int TIME_LIMIT = 120;
+
     public NormalGame() {
-        final int TIME_LIMIT = 100;
-        final int AMOUNT_OF_SQUARES = 12;
+
+    }
+
+    public NormalGame(int AMOUNT_OF_SQUARES, int TIME_LIMIT) {
+        this.AMOUNT_OF_SQUARES = AMOUNT_OF_SQUARES;
+        this.TIME_LIMIT = TIME_LIMIT;
+    }
+
+    public Button[][] getGameButtons() {
+        return gameButtons;
+    }
+
+    public void setGameButtons(Button[][] gameButtons) {
+        this.gameButtons = gameButtons;
+    }
+
+    public int getAMOUNT_OF_SQUARES() {
+        return AMOUNT_OF_SQUARES;
+    }
+
+    public void setAMOUNT_OF_SQUARES(int AMOUNT_OF_SQUARES) {
+        this.AMOUNT_OF_SQUARES = AMOUNT_OF_SQUARES;
+    }
+
+    public int getTIME_LIMIT() {
+        return TIME_LIMIT;
+    }
+
+    public void setTIME_LIMIT(int TIME_LIMIT) {
+        this.TIME_LIMIT = TIME_LIMIT;
     }
 
     @Override
