@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Matt/AndroidStudioProjects/MemoryGame/app/src/main/res/layout/activity_game.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Matt/AndroidStudioProjects/MemoryGame/app/src/main/res/layout/activity_hard_game.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Matt/AndroidStudioProjects/MemoryGame/app/src/main/res/layout/activity_main.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/Matt/AndroidStudioProjects/MemoryGame/app/src/main/res/layout/activity_normal_game.xml" value="0.36594202898550726" />
       </map>
     </option>
   </component>
@@ -13,5 +15,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.4466666666666667" />
+      </ProjectState>
+    </option>
   </component>
 </project>

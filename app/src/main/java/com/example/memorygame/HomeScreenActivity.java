@@ -34,6 +34,8 @@ public class HomeScreenActivity extends AppCompatActivity {
         RadioButton hardButton = findViewById(R.id.hard);
 
         RadioGroup difficultyButtons = new RadioGroup(getApplicationContext());
+
+        easyButton.setChecked(true);
     }
 
     public void startGame(View view) {
