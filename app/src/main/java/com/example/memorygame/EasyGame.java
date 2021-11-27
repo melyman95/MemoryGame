@@ -18,11 +18,11 @@ import java.util.TimerTask;
 
 public class EasyGame extends AppCompatActivity {
 
-    Button[][] gameButtons = new Button[3][3];
+    private Button[][] gameButtons = new Button[3][3];
 
-    private int AMOUNT_OF_SQUARES = 9;
-    private int TIME_LIMIT = 180;
-    private long timeLeftInMilliseconds;
+    private static int AMOUNT_OF_SQUARES = 9;
+    private static int TIME_LIMIT = 180;
+    private static long timeLeftInMilliseconds;
     private CountDownTimer gameTimer;
     private Button startTimerButton;
     private boolean isTimeLeft;
@@ -38,23 +38,8 @@ public class EasyGame extends AppCompatActivity {
     }
 
     // getters and setters
-    public Button[][] getGameButtons() {
-        return gameButtons;
-    }
 
-    public void setGameButtons(Button[][] gameButtons) {
-        this.gameButtons = gameButtons;
-    }
-
-    public int getAMOUNT_OF_SQUARES() {
-        return AMOUNT_OF_SQUARES;
-    }
-
-    public void setAMOUNT_OF_SQUARES(int AMOUNT_OF_SQUARES) {
-        this.AMOUNT_OF_SQUARES = AMOUNT_OF_SQUARES;
-    }
-
-    public int getTIME_LIMIT() {
+    public static int getTIME_LIMIT() {
         return TIME_LIMIT;
     }
 
@@ -68,8 +53,22 @@ public class EasyGame extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         TextView timerText = findViewById(R.id.timer);
+        timerText.setText(String.valueOf(EasyGame.getTIME_LIMIT()));
 
         startTimerButton = findViewById(R.id.startTimerButton);
+
+
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                String buttonId = "button" + i + j;
+                int resId = getResources().getIdentifier(buttonId, "id", getPackageName());
+                gameButtons[i][j] = findViewById(resId);
+                gameButtons[i][j].setOnClickListener(v -> {
+
+                });
+            }
+        }
 
         startTimerButton.setOnClickListener(new View.OnClickListener() {
             /**
