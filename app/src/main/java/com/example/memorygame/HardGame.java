@@ -3,6 +3,7 @@ package com.example.memorygame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,17 +14,18 @@ import java.util.TimerTask;
 public class HardGame extends AppCompatActivity {
 
     Button[][] gameButtons = new Button[3][6];
-
-    private int AMOUNT_OF_SQUARES = 18;
-    private static int TIME_LIMIT = 30;
+    private static int TIME_LIMIT = 300;
+    private CountDownTimer gameTimer;
+    private final long timeLeft = TIME_LIMIT * 100;
+    private Button startTimerButton;
+    private TextView hardTimerText;
 
     public HardGame() {
 
     }
 
-    public HardGame(int AMOUNT_OF_SQUARES, int TIME_LIMIT) {
-        this.AMOUNT_OF_SQUARES = AMOUNT_OF_SQUARES;
-        this.TIME_LIMIT = TIME_LIMIT;
+    public HardGame(int TIME_LIMIT) {
+        HardGame.TIME_LIMIT = TIME_LIMIT;
     }
 
     public static int getTIME_LIMIT() {
@@ -42,6 +44,8 @@ public class HardGame extends AppCompatActivity {
         TextView timerText = findViewById(R.id.hardTimerText);
         timerText.setText(String.valueOf(HardGame.getTIME_LIMIT()));
 
+        startTimerButton = findViewById(R.id.buttonHardStart);
+
         gameButtons[0][0] = findViewById(R.id.buttonHard1);
         gameButtons[0][1] = findViewById(R.id.buttonHard2);
         gameButtons[0][2] = findViewById(R.id.buttonHard3);
@@ -52,13 +56,14 @@ public class HardGame extends AppCompatActivity {
         gameButtons[1][1] = findViewById(R.id.buttonHard8);
         gameButtons[1][2] = findViewById(R.id.buttonHard9);
         gameButtons[1][3] = findViewById(R.id.buttonHard10);
-        gameButtons[1][4] = findViewById(R.id.buttonHard12);
-        gameButtons[1][5] = findViewById(R.id.buttonHard13);
-        gameButtons[2][0] = findViewById(R.id.buttonHard14);
-        gameButtons[2][1] = findViewById(R.id.buttonHard15);
-        gameButtons[2][2] = findViewById(R.id.buttonHard16);
-        gameButtons[2][3] = findViewById(R.id.buttonHard17);
-        gameButtons[2][4] = findViewById(R.id.buttonHard18);
+        gameButtons[1][4] = findViewById(R.id.buttonHard11);
+        gameButtons[1][5] = findViewById(R.id.buttonHard12);
+        gameButtons[2][0] = findViewById(R.id.buttonHard13);
+        gameButtons[2][1] = findViewById(R.id.buttonHard14);
+        gameButtons[2][2] = findViewById(R.id.buttonHard15);
+        gameButtons[2][3] = findViewById(R.id.buttonHard16);
+        gameButtons[2][4] = findViewById(R.id.buttonHard17);
+        gameButtons[2][5] = findViewById(R.id.buttonHard18);
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 6; j++) {
@@ -67,5 +72,25 @@ public class HardGame extends AppCompatActivity {
                 });
             }
         }
+
+        gameTimer = new CountDownTimer(timeLeft, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                hardTimerText = findViewById(R.id.hardTimerText);
+                hardTimerText.setText("seconds remaining: " + millisUntilFinished / 1000);
+            }
+
+            @Override
+            public void onFinish() {
+                hardTimerText.setText("Time's up!");
+            }
+        };
+
+        startTimerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gameTimer.start();
+            }
+        });
     }
 }

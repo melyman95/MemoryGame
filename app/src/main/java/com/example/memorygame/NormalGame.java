@@ -3,6 +3,7 @@ package com.example.memorygame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,17 +11,18 @@ import android.widget.TextView;
 public class NormalGame extends AppCompatActivity {
 
     private static Button[][] gameButtons = new Button[3][4];
-
-    private static int AMOUNT_OF_SQUARES = 12;
-    private static int TIME_LIMIT = 120;
+    private static int TIME_LIMIT = 1200;
+    private CountDownTimer gameTimer;
+    private final long timeLeft = TIME_LIMIT * 100;
+    private Button startTimerButton;
+    private TextView normalTimerText;
 
     public NormalGame() {
 
     }
 
-    public NormalGame(int AMOUNT_OF_SQUARES, int TIME_LIMIT) {
-        this.AMOUNT_OF_SQUARES = AMOUNT_OF_SQUARES;
-        this.TIME_LIMIT = TIME_LIMIT;
+    public NormalGame(int TIME_LIMIT) {
+        NormalGame.TIME_LIMIT = TIME_LIMIT;
     }
 
     public static int getTIME_LIMIT() {
@@ -38,6 +40,9 @@ public class NormalGame extends AppCompatActivity {
 
         TextView timerText = findViewById(R.id.normalTimerText);
         timerText.setText(String.valueOf(NormalGame.getTIME_LIMIT()));
+
+        startTimerButton = findViewById(R.id.buttonStartNormal);
+        normalTimerText = findViewById(R.id.normalTimerText);
 
         gameButtons[0][0] = findViewById(R.id.buttonNormal1);
         gameButtons[0][1] = findViewById(R.id.buttonNormal2);
@@ -59,5 +64,25 @@ public class NormalGame extends AppCompatActivity {
                 });
             }
         }
+
+        gameTimer = new CountDownTimer(timeLeft, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                normalTimerText = findViewById(R.id.normalTimerText);
+                normalTimerText.setText("seconds remaining: " + millisUntilFinished / 1000);
+            }
+
+            @Override
+            public void onFinish() {
+                normalTimerText.setText("Time's up!");
+            }
+        };
+
+        startTimerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gameTimer.start();
+            }
+        });
     }
 }
