@@ -6,35 +6,24 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class EasyGame extends AppCompatActivity {
 
     private Button[][] gameButtons = new Button[3][3];
-
-    private static int AMOUNT_OF_SQUARES = 9;
-    private static int TIME_LIMIT = 180;
-    private static long timeLeftInMilliseconds;
+    private static int TIME_LIMIT = 1800;
     private CountDownTimer gameTimer;
+    private final long timeLeft = TIME_LIMIT * 100;
     private Button startTimerButton;
-    private boolean isTimeLeft;
+    private TextView easyTimerText;
 
     // constructors
     public EasyGame() {
 
     }
 
-    public EasyGame(int AMOUNT_OF_SQUARES, int TIME_LIMIT) {
-        this.AMOUNT_OF_SQUARES = AMOUNT_OF_SQUARES;
-        this.TIME_LIMIT = TIME_LIMIT;
+    public EasyGame(int TIME_LIMIT) {
+        EasyGame.TIME_LIMIT = TIME_LIMIT;
     }
 
     // getters and setters
@@ -57,8 +46,6 @@ public class EasyGame extends AppCompatActivity {
 
         startTimerButton = findViewById(R.id.startTimerButton);
 
-
-
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 String buttonId = "button" + i + j;
@@ -70,6 +57,27 @@ public class EasyGame extends AppCompatActivity {
             }
         }
 
+        gameTimer = new CountDownTimer(timeLeft, 1000) {
+            /**
+             * Callback fired on regular interval.
+             *
+             * @param millisUntilFinished The amount of time until finished.
+             */
+            @Override
+            public void onTick(long millisUntilFinished) {
+                easyTimerText = findViewById(R.id.timer);
+                easyTimerText.setText("seconds remaining: " + millisUntilFinished / 1000);
+            }
+
+            /**
+             * Callback fired when the time is up.
+             */
+            @Override
+            public void onFinish() {
+                easyTimerText.setText("Time's up!");
+            }
+        };
+
         startTimerButton.setOnClickListener(new View.OnClickListener() {
             /**
              * Called when a view has been clicked.
@@ -78,25 +86,8 @@ public class EasyGame extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                startStop();
+                gameTimer.start();
             }
         });
-    }
-
-    public void startStop() {
-        if (isTimeLeft) {
-            stopTimer();
-        }
-        else{
-            startTimer();
-        }
-    }
-
-    public void startTimer() {
-
-    }
-
-    public void stopTimer() {
-
     }
 }
