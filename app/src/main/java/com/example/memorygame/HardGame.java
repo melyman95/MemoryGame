@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.ArrayList;
 
 public class HardGame extends AppCompatActivity {
 

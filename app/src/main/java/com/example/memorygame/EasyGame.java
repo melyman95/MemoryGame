@@ -7,6 +7,8 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.support.*;
+import java.util.ArrayList;
 
 public class EasyGame extends AppCompatActivity {
 
