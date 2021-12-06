@@ -12,13 +12,12 @@ import java.util.*;
 
 public class EasyGame extends AppCompatActivity {
 
-    private ImageButton[] gameButtons = new ImageButton[9];
+    private final ImageButton[] gameButtons = new ImageButton[9];
     private static int TIME_LIMIT = 1800;
     private CountDownTimer gameTimer;
-    private final long timeLeft = TIME_LIMIT * 100;
-    private Button startTimerButton;
+    private final long timeLeft = TIME_LIMIT * 100L;
     private TextView easyTimerText;
-    private static int SQUARES_AMOUNT = 9;
+    public static int SQUARES_AMOUNT = 9;
 
     // constructors
     public EasyGame() {
@@ -47,21 +46,21 @@ public class EasyGame extends AppCompatActivity {
 
         ArrayList<Integer> imageArray = new ArrayList<>();
         imageArray.add(R.drawable.apple);
+        imageArray.add(R.drawable.apple);
         imageArray.add(R.drawable.beachball);
-        imageArray.add(R.drawable.crab);
+        imageArray.add(R.drawable.beachball);
+        imageArray.add(R.drawable.donut);
         imageArray.add(R.drawable.donut);
         imageArray.add(R.drawable.pikachu);
-        imageArray.add(R.drawable.watermelon);
-        imageArray.add(R.drawable.donut);
         imageArray.add(R.drawable.pikachu);
-        imageArray.add(R.drawable.watermelon);
+        imageArray.add(R.drawable.pizzaglasses);
 
         Collections.shuffle(imageArray);
 
         TextView timerText = findViewById(R.id.timer);
         timerText.setText(String.valueOf(EasyGame.getTIME_LIMIT()));
 
-        startTimerButton = findViewById(R.id.startTimerButton);
+        Button startTimerButton = findViewById(R.id.startTimerButton);
 
         gameButtons[0] = findViewById(R.id.imageButtonEasy1);
         gameButtons[1] = findViewById(R.id.imageButtonEasy2);
@@ -132,5 +131,10 @@ public class EasyGame extends AppCompatActivity {
         for (int i = 0; i < SQUARES_AMOUNT; i++) {
             gameButtons[i].setEnabled(true);
         }
+    }
+
+    public static Integer getRandomImage(ArrayList<Integer> images) {
+        int index = (int)(Math.random() * images.size());
+        return images.get(index);
     }
 }

@@ -7,234 +7,244 @@
     android:background="@color/mainBackgroundColor"
     tools:context=".HardGame">
 
-    <Button
-        android:id="@+id/buttonHard1"
-        android:layout_width="0dp"
+    <ImageButton
+        android:id="@+id/imageButtonHard17"
+        android:layout_width="52dp"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard4"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonHard2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard5"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard3"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonHard3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonHard4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard7"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard1" />
-
-    <Button
-        android:id="@+id/buttonHard5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard8"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard6"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard4"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard2" />
-
-    <Button
-        android:id="@+id/buttonHard6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard5"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard3" />
-
-    <Button
-        android:id="@+id/buttonHard7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard10"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard4" />
-
-    <Button
-        android:id="@+id/buttonHard8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard11"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard9"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard7"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard5" />
-
-    <Button
-        android:id="@+id/buttonHard9"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard8"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard6" />
-
-    <Button
-        android:id="@+id/buttonHard10"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard13"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard7" />
-
-    <Button
-        android:id="@+id/buttonHard11"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard14"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard12"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard10"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard8" />
-
-    <Button
-        android:id="@+id/buttonHard12"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard11"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard9" />
-
-    <Button
-        android:id="@+id/buttonHard13"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard16"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard14"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard10" />
-
-    <Button
-        android:id="@+id/buttonHard14"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard17"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard15"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard13"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard11" />
-
-    <Button
-        android:id="@+id/buttonHard15"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHard18"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard14"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard12" />
-
-    <Button
-        android:id="@+id/buttonHard16"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard17"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard13" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard13"
+        app:srcCompat="@drawable/cardback" />
 
-    <Button
-        android:id="@+id/buttonHard17"
-        android:layout_width="0dp"
+    <ImageButton
+        android:id="@+id/imageButtonHard18"
+        android:layout_width="52dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="136dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonHardStart"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHard18"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard16"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard14" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonHard17"
+        app:srcCompat="@drawable/cardback" />
 
-    <Button
-        android:id="@+id/buttonHard18"
-        android:layout_width="0dp"
+    <ImageButton
+        android:id="@+id/imageButtonHard19"
+        android:layout_width="52dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="224dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonHardStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard15"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard20"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonHard17"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard15" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard16"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard5"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard1"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard6"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="136dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonHard5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonHard5"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard7"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard3"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard8"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="292dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard4"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard9"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard5"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard10"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="136dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonHard9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonHard9"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard11"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard7"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard12"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard8"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard13"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="37dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard9"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard14"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="136dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonHard13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonHard13"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard15"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginBottom="37dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard11"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard16"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="37dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard12"
+        app:srcCompat="@drawable/cardback" />
 
     <Button
         android:id="@+id/buttonHardStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:layout_marginBottom="16dp"
         android:text="Start"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHard17"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/imageButtonHard18"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonHard19" />
 
     <TextView
         android:id="@+id/hardTimerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="19dp"
         android:text="TextView"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/buttonHard2"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard3"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonHard3"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard1"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard2"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="136dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonHard3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonHard3"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard3"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hardTimerText"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHard4"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonHard8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cardback" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
