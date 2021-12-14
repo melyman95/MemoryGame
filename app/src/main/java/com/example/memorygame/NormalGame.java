@@ -96,30 +96,25 @@ public class NormalGame extends AppCompatActivity {
             gameButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            if ((Integer)gameButtons[finalI].getTag() == R.drawable.cardback && clicked < 2) {
-                                gameButtons[finalI].setImageResource(playingCards[finalI]);
-                                gameButtons[finalI].setTag(playingCards[finalI]);
-                                if (clicked == 0) {
-                                    lastClicked = finalI;
-                                }
-                                clicked++;
-                            } else if ((Integer)gameButtons[finalI].getTag() != R.drawable.cardback) {
-                                gameButtons[finalI].setImageResource(R.drawable.cardback);
-                                gameButtons[finalI].setTag(R.drawable.cardback);
-                                clicked--;
-                            }
-                            if (clicked == 2) {
-                                if (gameButtons[finalI].getTag() == gameButtons[lastClicked].getTag()) {
-                                    gameButtons[finalI].setEnabled(false);
-                                    gameButtons[lastClicked].setEnabled(false);
-                                    clicked = 0;
-                                }
-                            }
+                    if ((Integer)gameButtons[finalI].getTag() == R.drawable.cardback && clicked < 2) {
+                        gameButtons[finalI].setImageResource(playingCards[finalI]);
+                        gameButtons[finalI].setTag(playingCards[finalI]);
+                        if (clicked == 0) {
+                            lastClicked = finalI;
                         }
-                    }).start();
+                        clicked++;
+                    } else if ((Integer)gameButtons[finalI].getTag() != R.drawable.cardback) {
+                        gameButtons[finalI].setImageResource(R.drawable.cardback);
+                        gameButtons[finalI].setTag(R.drawable.cardback);
+                        clicked--;
+                    }
+                    if (clicked == 2) {
+                        if (gameButtons[finalI].getTag() == gameButtons[lastClicked].getTag()) {
+                            gameButtons[finalI].setEnabled(false);
+                            gameButtons[lastClicked].setEnabled(false);
+                            clicked = 0;
+                        }
+                    }
                 }
             });
         }
@@ -160,13 +155,16 @@ public class NormalGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 enableInput();
+                scoreText.setText(String.valueOf(100));
                 Reset();
                 enableInput();
+                gameTimer.cancel();
                 gameTimer.start();
             }
         });
         disableInput();
         enterNameButton.setEnabled(false);
+        scoreText.setText(String.valueOf(100));
     }
 
     public void disableInput() {
@@ -207,5 +205,12 @@ public class NormalGame extends AppCompatActivity {
 
     public static int getPlayerScore() {
         return playerScore;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        playerScore = 100;
+        gameTimer.cancel();
     }
 }
