@@ -118,6 +118,7 @@ public class HardGame extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                disableInput();
                 hardTimerText.setText("Time's up!");
             }
         };
@@ -125,6 +126,7 @@ public class HardGame extends AppCompatActivity {
         startTimerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Reset();
                 enableInput();
                 gameTimer.start();
             }
@@ -140,6 +142,12 @@ public class HardGame extends AppCompatActivity {
     public void enableInput() {
         for (int i = 0; i < SQUARES_AMOUNT; i++) {
             gameButtons[i].setEnabled(true);
+        }
+    }
+
+    public void Reset() {
+        for (int i = 0; i < SQUARES_AMOUNT; i++) {
+            gameButtons[i].setImageResource(R.drawable.cardback);
         }
     }
 }

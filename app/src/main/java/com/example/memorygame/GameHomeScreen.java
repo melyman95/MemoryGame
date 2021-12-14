@@ -1,20 +1,32 @@
 package com.example.memorygame;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
-public class HomeScreenActivity extends AppCompatActivity {
+import java.io.Console;
+import java.util.List;
+
+public class GameHomeScreen extends AppCompatActivity {
 
     public static boolean EASY = false;
     public static boolean NORMAL = false;
     public static boolean HARD = false;
+
+    SQLiteDatabase memGameDatabase;
+    String queryString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +43,18 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         RadioButton easyButton = findViewById(R.id.easy);
         RadioButton normalButton = findViewById(R.id.normal);
-        RadioButton hardButton = findViewById(R.id.hard);
 
         RadioGroup difficultyButtons = new RadioGroup(getApplicationContext());
 
         easyButton.setChecked(true);
+
+        highScoresButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = viewHighScores();
+                startActivity(intent);
+            }
+        });
     }
 
     public void startGame(View view) {
@@ -44,7 +63,6 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         setEASY(findViewById(R.id.easy));
         setNORMAL(findViewById(R.id.normal));
-        setHARD(findViewById(R.id.hard));
 
         if (EASY == true) {
             intent = EasyGame();
@@ -102,5 +120,10 @@ public class HomeScreenActivity extends AppCompatActivity {
         else {
             HARD = false;
         }
+    }
+
+    public Intent viewHighScores() {
+        Intent intent = new Intent(this, ViewScores.class);
+        return intent;
     }
 }
