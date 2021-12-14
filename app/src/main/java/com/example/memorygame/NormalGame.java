@@ -61,7 +61,7 @@ public class NormalGame extends AppCompatActivity {
         Collections.shuffle(Arrays.asList(playingCards));
 
         TextView timerText = findViewById(R.id.normalTimerText);
-        timerText.setText(String.valueOf(NormalGame.getTIME_LIMIT()));
+        timerText.setText("");
         TextView scoreText = findViewById(R.id.playerScoreNormal);
         scoreText.setText(String.valueOf(playerScore));
 
@@ -96,25 +96,30 @@ public class NormalGame extends AppCompatActivity {
             gameButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if ((Integer)gameButtons[finalI].getTag() == R.drawable.cardback && clicked < 2) {
-                        gameButtons[finalI].setImageResource(playingCards[finalI]);
-                        gameButtons[finalI].setTag(playingCards[finalI]);
-                        if (clicked == 0) {
-                            lastClicked = finalI;
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if ((Integer)gameButtons[finalI].getTag() == R.drawable.cardback && clicked < 2) {
+                                gameButtons[finalI].setImageResource(playingCards[finalI]);
+                                gameButtons[finalI].setTag(playingCards[finalI]);
+                                if (clicked == 0) {
+                                    lastClicked = finalI;
+                                }
+                                clicked++;
+                            } else if ((Integer)gameButtons[finalI].getTag() != R.drawable.cardback) {
+                                gameButtons[finalI].setImageResource(R.drawable.cardback);
+                                gameButtons[finalI].setTag(R.drawable.cardback);
+                                clicked--;
+                            }
+                            if (clicked == 2) {
+                                if (gameButtons[finalI].getTag() == gameButtons[lastClicked].getTag()) {
+                                    gameButtons[finalI].setEnabled(false);
+                                    gameButtons[lastClicked].setEnabled(false);
+                                    clicked = 0;
+                                }
+                            }
                         }
-                        clicked++;
-                    } else if ((Integer)gameButtons[finalI].getTag() != R.drawable.cardback) {
-                        gameButtons[finalI].setImageResource(R.drawable.cardback);
-                        gameButtons[finalI].setTag(R.drawable.cardback);
-                        clicked--;
-                    }
-                    if (clicked == 2) {
-                        if (gameButtons[finalI].getTag() == gameButtons[lastClicked].getTag()) {
-                            gameButtons[finalI].setEnabled(false);
-                            gameButtons[lastClicked].setEnabled(false);
-                            clicked = 0;
-                        }
-                    }
+                    }).start();
                 }
             });
         }
@@ -126,13 +131,19 @@ public class NormalGame extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 normalTimerText = findViewById(R.id.normalTimerText);
                 normalTimerText.setText("seconds remaining: " + millisUntilFinished / 1000);
-                playerScore -= 1;
+                if (playerScore > 0) {
+                    playerScore -= 1;
+                }
+                else if (playerScore <= 0) {
+                    playerScore += 0;
+                }
                 scoreText.setText(String.valueOf(getPlayerScore()));
 
                 if (gameEnd()) {
                     if (gameTimer != null) {
                         gameTimer.cancel();
                         gameTimer = null;
+                        enterNameButton.setEnabled(true);
                     }
                 }
             }
@@ -141,17 +152,21 @@ public class NormalGame extends AppCompatActivity {
             public void onFinish() {
                 disableInput();
                 normalTimerText.setText("Time's up!");
+                enterNameButton.setEnabled(true);
             }
         };
 
         startTimerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                enableInput();
                 Reset();
                 enableInput();
                 gameTimer.start();
             }
         });
+        disableInput();
+        enterNameButton.setEnabled(false);
     }
 
     public void disableInput() {

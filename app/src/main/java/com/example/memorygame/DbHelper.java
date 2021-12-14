@@ -44,7 +44,7 @@ public class DbHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableStatement = "CREATE TABLE " + getScores() + " (" + getId() + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+        String createTableStatement = "CREATE TABLE " + SCORE_TABLE + " (" + getId() + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 EnterNameFragment.getPlayerName() + " TEXT, " + EasyGame.getPlayerScore() + " INTEGER)";
         db.execSQL(createTableStatement);
     }
