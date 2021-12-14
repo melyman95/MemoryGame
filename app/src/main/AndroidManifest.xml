@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoryGame">
         <activity
+            android:name=".ViewScores"
+            android:exported="false"
+            android:label="@string/title_activity_view_scores"
+            android:theme="@style/Theme.MemoryGame.NoActionBar" />
+        <activity
             android:name=".HardGame"
             android:exported="false" />
         <activity
@@ -19,7 +24,7 @@
             android:name=".EasyGame"
             android:exported="false" />
         <activity
-            android:name=".HomeScreenActivity"
+            android:name=".GameHomeScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
