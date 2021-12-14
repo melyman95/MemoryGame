@@ -190,11 +190,11 @@
         android:id="@+id/normalTimerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageViewNormal3"
-        app:layout_constraintStart_toStartOf="@+id/imageViewNormal3"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -203,8 +203,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="7dp"
         android:layout_marginBottom="16dp"
-        android:text="Enter Name"
         android:onClick="enterName"
+        android:text="Enter Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -250,8 +250,10 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/imageViewNormal4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toEndOf="@+id/normalTimerText"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/scoreSubText"

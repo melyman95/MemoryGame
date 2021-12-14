@@ -84,7 +84,7 @@ public class EasyGame extends AppCompatActivity {
         Collections.shuffle(Arrays.asList(playingCards));
 
         TextView timerText = findViewById(R.id.easyTimer);
-        timerText.setText(String.valueOf(EasyGame.getTIME_LIMIT()));
+        timerText.setText("");
         TextView scoreText = findViewById(R.id.playerScore);
         scoreText.setText(String.valueOf(playerScore));
 
@@ -130,13 +130,19 @@ public class EasyGame extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 easyTimerText = findViewById(R.id.easyTimer);
                 easyTimerText.setText("seconds remaining: " + millisUntilFinished / 1000);
-                playerScore -= 1;
+                if (playerScore > 0) {
+                    playerScore -= 1;
+                }
+                else if (playerScore == 0){
+                    playerScore += 0;
+                }
                 scoreText.setText(String.valueOf(getPlayerScore()));
 
                 if (gameEnd()) {
                     if (gameTimer != null) {
                         gameTimer.cancel();
                         gameTimer = null;
+                        enterNameButton.setEnabled(true);
                     }
                 }
             }
@@ -159,11 +165,17 @@ public class EasyGame extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
+                enableInput();
+                scoreText.setText(String.valueOf(100));
                 Reset();
                 enableInput();
+                gameTimer.cancel();
                 gameTimer.start();
             }
         });
+        disableInput();
+        enterNameButton.setEnabled(false);
+        scoreText.setText(String.valueOf(100));
     }
     public void disableInput() {
         for (int i = 0; i < SQUARES_AMOUNT; i++) {
@@ -203,5 +215,12 @@ public class EasyGame extends AppCompatActivity {
             }
         }
         return count == SQUARES_AMOUNT;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        playerScore = 100;
+        gameTimer.cancel();
     }
 }
